@@ -23,17 +23,18 @@ public class Application {
 
         try {
             Customer customer = new Customer("홍길동");
-            em.persist(customer);
+            em.persist(customer);// 1. customer를 영속성 컨텍스트(1차 캐시)에 저장
 
             Order order1 = new Order(customer);
-            em.persist(order1);
+            em.persist(order1); // 2. order1을 영속성 컨텍스트에 저장
 
-            tx.commit();
+            tx.commit(); // 3. 트랜잭션 커밋
             // 엔티티 매니저의 영속성 컨텍스트를 초기화
+            //영속성 컨텍스트(1차 캐시)가 완전히 비워진다.
             em.clear();// 지연로딩 확인
             Order foundOrder = em.find(Order.class, order1.getId());
             System.out.println("=== Customer 조회 이전 == ");
-            // 조회 시점에 customer를 조회함.
+            // toString() 시점에 customer를 조회함.
             System.out.println("지연 로딩 테스트: " + foundOrder);
 
         } catch (Exception e) {
