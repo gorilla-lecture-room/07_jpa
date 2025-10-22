@@ -7,11 +7,22 @@
 
 SET FOREIGN_KEY_CHECKS = 0;
 
--- 기존 테이블이 있다면 안전하게 삭제
+DROP TABLE IF EXISTS categories;
+DROP TABLE IF EXISTS course_categories;
+DROP TABLE IF EXISTS courses;
+DROP TABLE IF EXISTS enrollments;
+DROP TABLE IF EXISTS lessons;
+DROP TABLE IF EXISTS roles;
+DROP TABLE IF EXISTS users;
+
 DROP TABLE IF EXISTS certificates;
 DROP TABLE IF EXISTS enrollments;
+DROP TABLE IF EXISTS lessons;
+DROP TABLE IF EXISTS course_categories;
+DROP TABLE IF EXISTS categories;
 DROP TABLE IF EXISTS courses;
 DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS roles;
 
 SET FOREIGN_KEY_CHECKS = 1;
 

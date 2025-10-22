@@ -34,7 +34,7 @@ public class Application {
         String jpql = "SELECT c FROM Course c WHERE c.title LIKE :title";
         TypedQuery<Course> findCourse = em.createQuery(jpql, Course.class);
         // 다음과 같이 파라미터를 바인딩하여 사용이 가능하다.
-        findCourse.setParameter("title", "%데이터%");
+        findCourse.setParameter("title", "%알고리즘%");
         List<Course> courseList = findCourse.getResultList();
 
         courseList.forEach(course -> System.out.println(course.getCourseId() + " - " + course.getTitle()));

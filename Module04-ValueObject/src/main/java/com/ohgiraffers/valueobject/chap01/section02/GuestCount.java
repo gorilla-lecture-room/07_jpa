@@ -1,5 +1,6 @@
 package com.ohgiraffers.valueobject.chap01.section02;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 
 import java.util.Objects;
@@ -33,7 +34,9 @@ import java.util.Objects;
  */
 @Embeddable
 public class GuestCount {
-
+    // 💡 컬럼명을 명시하지 않으면 필드명(value)을 따라가므로 DB에는 `value` 컬럼이 생성됩니다.
+    // 하지만 Reservation에서 @AttributeOverride를 통해 컬럼명을 변경할 수 있습니다.
+    @Column(name = "number_of_guests")
     private int value;
 
     protected GuestCount() {}

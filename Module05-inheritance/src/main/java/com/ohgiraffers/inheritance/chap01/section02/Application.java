@@ -1,7 +1,5 @@
 package com.ohgiraffers.inheritance.chap01.section02;
 
-
-
 /*
  * 📌 상속 매핑 전략 설명
  * - JPA는 객체지향의 상속을 데이터베이스에 매핑하기 위해 3가지 전략을 제공한다:

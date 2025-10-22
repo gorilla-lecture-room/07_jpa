@@ -1,6 +1,7 @@
 package com.ohgiraffers.valueobject.chap02.section02;
 
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 
 import java.util.Objects;
@@ -13,7 +14,10 @@ import java.util.Objects;
 @Embeddable
 public class AvailableSize {
 
+    @Column(name = "label")
     private String label; // S, M, L, XL 등 사이즈 라벨
+
+    @Column(name = "stock_quantity")
     private int stockQuantity; // 해당 사이즈의 재고 수량
 
     protected AvailableSize() {}

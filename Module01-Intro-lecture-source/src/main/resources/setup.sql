@@ -1,5 +1,6 @@
 -- ROOT 로그인 및 아래 쿼리 실행.
 
+drop database JPA_LECTURE;
 CREATE DATABASE JPA_LECTURE;
 
 GRANT ALL PRIVILEGES ON JPA_LECTURE.* TO 'gorilla'@'%';
@@ -7,13 +8,16 @@ GRANT ALL PRIVILEGES ON JPA_LECTURE.* TO 'gorilla'@'%';
 USE JPA_LECTURE;
 
 SHOW tables;
+
+
 SET FOREIGN_KEY_CHECKS = 0;
--- 기존 테이블이 있다면 안전하게 삭제
+
+-- 의존성 역순으로 테이블 삭제
 DROP TABLE IF EXISTS products;
 DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS roles;
-SET FOREIGN_KEY_CHECKS = 1;
 
+SET FOREIGN_KEY_CHECKS = 1;
 -- 1. Roles 테이블: Enum 매핑을 위한 역할 정보
 CREATE TABLE roles
 (
@@ -61,3 +65,4 @@ INSERT INTO users (username, email, password_hash, birth_date, role_id, zipcode,
 INSERT INTO products (name, price_amount, price_currency, manufacturer_name, manufacturer_country) VALUES
                                                                                                        ('스마트폰', 799.99, 'USD', '삼성전자', '대한민국'),
                                                                                                        ('노트북', 1299.99, 'USD', 'LG전자', '대한민국');
+

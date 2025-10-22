@@ -14,6 +14,7 @@ public class Product {
     private String name;
     private double price;
     private String brand;
+    @Column(name = "stock_quantity")
     private int stockQuantity;
 
     protected Product() {}

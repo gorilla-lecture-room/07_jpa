@@ -2,7 +2,6 @@ package com.ohgiraffers.valueobject.chap02.section01;
 
 import jakarta.persistence.*;
 
-import java.util.Objects;
 
 @Entity(name = "section01_available")
 @Table(name = "product_available_sizes_section01")
@@ -18,7 +17,7 @@ public class AvailableSize {
     @Column(name = "label")
     private String label; // S, M, L, XL 등 사이즈 라벨
 
-    @Column(name = "stockQuantity")
+    @Column(name = "stock_quantity")
     private int stockQuantity; // 해당 사이즈의 재고 수량
 
     protected AvailableSize() {}

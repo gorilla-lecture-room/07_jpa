@@ -1,6 +1,7 @@
 package com.ohgiraffers.inheritance.chap01.section02.model;
 
 
+import jakarta.persistence.Column;
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
 
@@ -12,6 +13,7 @@ import jakarta.persistence.Entity;
 @Entity
 @DiscriminatorValue("ELECTRONIC")
 public class ElectronicProduct extends Product {
+    @Column(name = "warranty_period")
     private int warrantyPeriod; // 보증 기간 (개월)
     private String powerConsumption; // 전력 소비량
 

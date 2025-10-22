@@ -42,8 +42,9 @@ public class Reservation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    @Column(name = "guest_name")
     private String guestName;
+    @Column(name = "room_number")
     private String roomNumber;
 
     @Embedded
@@ -52,6 +53,7 @@ public class Reservation {
     @Embedded
     private StayPeriod stayPeriod; // 📌 StayPeriod 값 객체
 
+    @Column(name = "room_rate")
     private int roomRate; // 1박당 방 가격
 
     protected Reservation() {}

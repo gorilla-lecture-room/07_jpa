@@ -1,6 +1,7 @@
 package com.ohgiraffers.valueobject.chap01.section02;
 
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 
 import java.time.LocalDate;
@@ -20,7 +21,10 @@ import java.util.Objects;
 @Embeddable
 public class StayPeriod {
 
+    @Column(name = "check_in_date")
     private LocalDate checkInDate;
+
+    @Column(name = "check_out_date")
     private LocalDate checkOutDate;
 
     protected StayPeriod() {}

@@ -3,6 +3,19 @@
 -- 🏆 JPQL 실습을 위한 LMS 데이터베이스 초기화 스크립트
 -- =================================================================================
 
+SET FOREIGN_KEY_CHECKS = 0;
+DROP TABLE IF EXISTS clothing_products_joined;
+DROP TABLE IF EXISTS clothing_products_tpc;
+DROP TABLE IF EXISTS electronic_products_joined;
+DROP TABLE IF EXISTS electronic_products_tpc;
+DROP TABLE IF EXISTS food_products_joined;
+DROP TABLE IF EXISTS food_products_tpc;
+DROP TABLE IF EXISTS id_sequences;
+DROP TABLE IF EXISTS product_id_seq;
+DROP TABLE IF EXISTS products;
+DROP TABLE IF EXISTS products_joined;
+
+
 -- 기존 테이블이 있다면 안전하게 삭제
 DROP TABLE IF EXISTS enrollments;
 DROP TABLE IF EXISTS lessons;
@@ -11,6 +24,8 @@ DROP TABLE IF EXISTS categories;
 DROP TABLE IF EXISTS courses;
 DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS roles;
+show tables;
+SET FOREIGN_KEY_CHECKS = 1;
 
 -- 1. Roles: 역할 테이블 (강사, 학생 등)
 CREATE TABLE roles (
@@ -131,7 +146,3 @@ INSERT INTO enrollments (user_id, course_id, status) VALUES
                                                          (101, 2, 'active'), (103, 2, 'completed'), (105, 2, 'active'), (107, 2, 'active'),
 -- 기타 강좌 등록
                                                          (102, 3, 'active'), (104, 3, 'active'), (106, 4, 'completed'), (108, 5, 'active'), (109, 5, 'active'), (110, 5, 'canceled');
-
--- =================================================================================
--- 🏆 데이터베이스 준비 완료!
--- =================================================================================
