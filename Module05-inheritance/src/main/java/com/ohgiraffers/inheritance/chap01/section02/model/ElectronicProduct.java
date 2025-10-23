@@ -6,16 +6,18 @@ import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
 
 
-
 /*
  * 📌 자식 클래스: ElectronicProduct
  */
 @Entity
-@DiscriminatorValue("ELECTRONIC")
+@DiscriminatorValue("ELECTRONIC") // 💡 DTYPE 값: 'product_type' 컬럼에 'ELECTRONIC'으로 저장됨
 public class ElectronicProduct extends Product {
-    @Column(name = "warranty_period")
-    private int warrantyPeriod; // 보증 기간 (개월)
-    private String powerConsumption; // 전력 소비량
+
+    @Column(name = "warranty_period") // (원래 명시되어 있었음)
+    private int warrantyPeriod;
+
+    @Column(name = "power_consumption") // 💡 명시적 매핑
+    private String powerConsumption;
 
     protected ElectronicProduct() {}
 

@@ -1,6 +1,7 @@
 package com.ohgiraffers.inheritance.chap01.section02.model;
 
 
+import jakarta.persistence.Column;
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
 
@@ -12,10 +13,14 @@ import java.time.LocalDate;
 @Entity
 @DiscriminatorValue("FOOD")
 public class FoodProduct extends Product {
-    private LocalDate expirationDate; // 유통기한
-    private boolean isOrganic; // 유기농 여부
-    private String storageInstruction; // 보관 방법
+    @Column(name = "expiration_date") // 💡 명시적 매핑
+    private LocalDate expirationDate;
 
+    @Column(name = "is_organic") // 💡 명시적 매핑
+    private boolean isOrganic;
+
+    @Column(name = "storage_instruction") // 💡 명시적 매핑
+    private String storageInstruction;
     protected FoodProduct() {}
 
     public FoodProduct(String name, double price, String brand, int stockQuantity, LocalDate expirationDate, boolean isOrganic, String storageInstruction) {

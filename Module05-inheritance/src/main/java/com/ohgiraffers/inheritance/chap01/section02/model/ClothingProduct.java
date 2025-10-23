@@ -1,6 +1,7 @@
 package com.ohgiraffers.inheritance.chap01.section02.model;
 
 
+import jakarta.persistence.Column;
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
 
@@ -10,9 +11,14 @@ import jakarta.persistence.Entity;
 @Entity
 @DiscriminatorValue("CLOTHING")
 public class ClothingProduct extends Product {
-    private String size; // 사이즈 (S, M, L 등)
-    private String material; // 소재
-    private String color; // 색상
+    @Column(name = "size") // 💡 명시적 매핑
+    private String size;
+
+    @Column(name = "material") // 💡 명시적 매핑
+    private String material;
+
+    @Column(name = "color") // 💡 명시적 매핑
+    private String color;
 
     protected ClothingProduct() {}
 

@@ -28,7 +28,7 @@
             <property name="javax.persistence.jdbc.password" value="gorilla"/>
             <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/JPA_LECTURE"/>
             <!-- hibernate 설정 (실행 되는 sql의 생성) -->
-            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="hibernate.hbm2ddl.auto" value="none"/>
             <!-- hibernate 설정 (실행 되는 sql 구문을 format 형태로 보여준다) -->
             <property name="hibernate.show_sql" value="true"/>
             <property name="hibernate.format_sql" value="true"/>
@@ -37,24 +37,24 @@
 
 
 
-    <persistence-unit name="jpa-lesson">
+<!--    <persistence-unit name="jpa-lesson">-->
 
-        <class>com.ohgiraffers.inheritance.mission.model.Admin</class>
-        <class>com.ohgiraffers.inheritance.mission.model.Instructor</class>
-        <class>com.ohgiraffers.inheritance.mission.model.Student</class>
-        <class>com.ohgiraffers.inheritance.mission.model.User</class>
-        <properties>
-            <!-- 데이터 베이스 연결 정보 -->
-            <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
-            <property name="javax.persistence.jdbc.user" value="gorilla"/>
-            <property name="javax.persistence.jdbc.password" value="gorilla"/>
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/HELLOWORLDLABS_LMS"/>
+<!--        <class>com.ohgiraffers.inheritance.mission.model.Admin</class>-->
+<!--        <class>com.ohgiraffers.inheritance.mission.model.Instructor</class>-->
+<!--        <class>com.ohgiraffers.inheritance.mission.model.Student</class>-->
+<!--        <class>com.ohgiraffers.inheritance.mission.model.User</class>-->
+<!--        <properties>-->
+<!--            &lt;!&ndash; 데이터 베이스 연결 정보 &ndash;&gt;-->
+<!--            <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>-->
+<!--            <property name="javax.persistence.jdbc.user" value="gorilla"/>-->
+<!--            <property name="javax.persistence.jdbc.password" value="gorilla"/>-->
+<!--            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/HELLOWORLDLABS_LMS"/>-->
 
-            <property name="hibernate.hbm2ddl.auto" value="update"/>
-            <!-- hibernate 설정 (실행 되는 sql 구문을 format 형태로 보여준다) -->
-            <property name="hibernate.show_sql" value="true"/>
-            <property name="hibernate.format_sql" value="true"/>
-        </properties>
-    </persistence-unit>
+<!--            <property name="hibernate.hbm2ddl.auto" value="update"/>-->
+<!--            &lt;!&ndash; hibernate 설정 (실행 되는 sql 구문을 format 형태로 보여준다) &ndash;&gt;-->
+<!--            <property name="hibernate.show_sql" value="true"/>-->
+<!--            <property name="hibernate.format_sql" value="true"/>-->
+<!--        </properties>-->
+<!--    </persistence-unit>-->
 
 </persistence>
