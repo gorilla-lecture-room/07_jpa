@@ -4,16 +4,30 @@
 -- =================================================================================
 
 SET FOREIGN_KEY_CHECKS = 0;
-DROP TABLE IF EXISTS clothing_products_joined;
-DROP TABLE IF EXISTS clothing_products_tpc;
-DROP TABLE IF EXISTS electronic_products_joined;
-DROP TABLE IF EXISTS electronic_products_tpc;
-DROP TABLE IF EXISTS food_products_joined;
-DROP TABLE IF EXISTS food_products_tpc;
-DROP TABLE IF EXISTS id_sequences;
-DROP TABLE IF EXISTS product_id_seq;
+-- Section 02: Single Table Strategy
 DROP TABLE IF EXISTS products;
+
+-- Section 03: Joined Strategy
+DROP TABLE IF EXISTS electronic_products_joined;
+DROP TABLE IF EXISTS clothing_products_joined;
+DROP TABLE IF EXISTS food_products_joined;
 DROP TABLE IF EXISTS products_joined;
+
+-- Section 04: Table Per Class Strategy
+DROP TABLE IF EXISTS electronic_products_tpc;
+DROP TABLE IF EXISTS clothing_products_tpc;
+DROP TABLE IF EXISTS food_products_tpc;
+DROP TABLE IF EXISTS product_id_seq; -- Sequence simulation table
+
+-- Mission a_basic & c_deep: Payment (Joined Strategy)
+DROP TABLE IF EXISTS card_payments;
+DROP TABLE IF EXISTS bank_transfers;
+DROP TABLE IF EXISTS payment_joined;
+
+-- Mission b_middle: Content (Joined Strategy)
+DROP TABLE IF EXISTS posts;
+DROP TABLE IF EXISTS videos;
+DROP TABLE IF EXISTS contents;
 
 
 -- 기존 테이블이 있다면 안전하게 삭제
