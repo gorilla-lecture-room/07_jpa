@@ -1,0 +1,45 @@
+# src/main/resources/application.yml 예시
+
+spring:
+  # === 데이터베이스 연결 설정 ===
+  datasource:
+    # DB 접속 URL (DB 종류, 호스트, 포트, 데이터베이스명 지정)
+    url: jdbc:mysql://localhost:3306/jpa_lecture?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    # DB 사용자 이름
+    username: gorilla # 실제 사용하는 DB 계정으로 변경하세요.
+    # DB 비밀번호
+    password: gorilla # 실제 사용하는 DB 비밀번호로 변경하세요.
+    # JDBC 드라이버 클래스 이름 (보통 자동 감지되지만 명시 권장)
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  # === JPA & Hibernate 설정 ===
+  jpa:
+    # Hibernate 설정
+    hibernate:
+      # DDL(Data Definition Language) 자동 생성 옵션:
+      # - none: 아무 작업 안 함 (운영 환경 권장)
+      # - create: 애플리케이션 시작 시 기존 테이블 삭제 후 새로 생성 (테스트 시 유용)
+      # - create-drop: 애플리케이션 시작 시 생성, 종료 시 삭제 (테스트 시 유용)
+      # - update: 변경된 스키마만 반영 (개발 초기 단계에 편리하나 주의 필요)
+      # - validate: 엔티티와 테이블 매핑 검증 (운영 환경에서 안전)
+      ddl-auto: none # 개발 초기에는 update나 create 사용 가능
+    # JPA 관련 추가 프로퍼티
+    properties:
+      hibernate:
+        # SQL 로그 출력 (개발 시 유용)
+        show_sql: true
+        # SQL 로그 예쁘게 포맷팅
+        format_sql: true
+        # (선택) 사용할 DB 방언(Dialect) 지정 (보통 자동 감지)
+        # dialect: org.hibernate.dialect.MySQLDialect
+
+    # (선택) Open-in-View 설정: OSIV 패턴 사용 여부 (true가 기본값)
+    # true: HTTP 요청 시작부터 끝까지 영속성 컨텍스트 유지 (지연 로딩 문제 단순화 vs. 성능 이슈 가능성)
+    # false: 트랜잭션 범위 내에서만 영속성 컨텍스트 유지 (성능 이점 vs. 지연 로딩 예외 발생 가능성)
+    # open-in-view: true # 기본값
+
+# (선택) 로깅 레벨 설정 (SQL 파라미터 값 보기 등)
+#logging:
+#  level:
+#    org.hibernate.SQL: debug # 실행되는 SQL 로그 보기
+    # org.hibernate.type.descriptor.sql: trace # SQL ? 에 바인딩되는 파라미터 값 보기 (주의: 성능 저하 가능)

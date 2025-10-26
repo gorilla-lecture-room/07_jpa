@@ -1,0 +1,4 @@
+### 스파게티 코드 컨트롤러 테스트
+# 10000원 이하의 저렴한 상품 조회
+GET http://localhost:8080/spaghetti/products/cheap?maxPrice=10000
+Accept: application/json`

@@ -1,0 +1,16 @@
+### 1. 가격 기준으로 저렴한 상품 목록 조회
+# @GetMapping("/products/cheap")
+# maxPrice=10000으로 요청
+GET http://localhost:8080/chap01/section02/products/cheap?maxPrice=10000
+Accept: application/json
+
+### 2. ID로 특정 상품 상세 조회
+# @GetMapping("/products/{productId}")
+# (예: 1번 상품 조회)
+GET http://localhost:8080/chap01/section02/products/1
+Accept: application/json
+
+### 2-1. ID로 특정 상품 상세 조회 (예: 2번 상품 조회)
+# @GetMapping("/products/{productId}")
+GET http://localhost:8080/chap01/section02/products/2
+Accept: application/json

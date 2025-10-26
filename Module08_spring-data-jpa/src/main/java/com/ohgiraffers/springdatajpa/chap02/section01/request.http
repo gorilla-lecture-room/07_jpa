@@ -1,0 +1,63 @@
+### 1. ID로 특정 상품 조회 (성공 예시: 1번 상품)
+# @GetMapping("/{productId}")
+GET http://localhost:8080/chap02/section01/products/1
+Accept: application/json
+
+### 2. ID로 특정 상품 조회 (실패 예시: 999번 상품)
+# @GetMapping("/{productId}")
+# (Service에서 예외 발생 시 Controller가 404 Not Found 반환)
+GET http://localhost:8080/chap02/section01/products/999
+Accept: application/json
+
+### 3. 모든 상품 조회
+# @GetMapping
+GET http://localhost:8080/chap02/section01/products
+Accept: application/json
+
+### 4. 특정 가격 이하 상품명 조회 (예: 10000원 이하)
+# @GetMapping("/cheap")
+GET http://localhost:8080/chap02/section01/products/cheap?maxPrice=10000
+Accept: application/json
+
+### 5. 새로운 상품 등록
+# @PostMapping
+POST http://localhost:8080/chap02/section01/products
+Content-Type: application/json
+Accept: application/json
+
+{
+  "productName": "새로운 상품 (테스트)",
+  "price": 15000
+}
+
+### 6. 특정 상품 정보 수정 (예: 1번 상품 수정)
+# @PutMapping("/{productId}")
+PUT http://localhost:8080/chap02/section01/products/1
+Content-Type: application/json
+Accept: application/json
+
+{
+  "productName": "수정된 이름",
+  "price": 9900
+}
+
+### 7. 특정 상품 정보 수정 (실패 예시: 999번 상품 수정)
+# @PutMapping("/{productId}")
+PUT http://localhost:8080/chap02/section01/products/999
+Content-Type: application/json
+Accept: application/json
+
+{
+  "productName": "수정 시도",
+  "price": 100
+}
+
+### 8. 특정 상품 삭제 (예: 1번 상품 삭제)
+# @DeleteMapping("/{productId}")
+DELETE http://localhost:8080/chap02/section01/products/1
+Accept: application/json
+
+### 9. 특정 상품 삭제 (실패 예시: 999번 상품 삭제)
+# @DeleteMapping("/{productId}")
+DELETE http://localhost:8080/chap02/section01/products/999
+Accept: application/json
